@@ -39,6 +39,11 @@ export default function () {
             id: 8,
             name: "SAP UI5",
             level: 70,
+        },
+        {
+            id: 9,
+            name: "Android Development",
+            level: 85,
         }
     ]
 }
