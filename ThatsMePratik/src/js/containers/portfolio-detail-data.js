@@ -41,7 +41,7 @@ class PortfolioDetail extends Component{
                                                 </strong>
                                             </li>
                                         </ul>
-                                        <h5> Link: <strong><a href={portfolio.link}>{portfolio.title}</a></strong> </h5>
+                                        <h5> Project Link: <strong><a href={portfolio.link}>{portfolio.title}</a></strong> </h5>
                                         <button type="button" className="btn btn-default" data-dismiss="modal">
                                             <i className="fa fa-times"></i> Close
                                         </button>

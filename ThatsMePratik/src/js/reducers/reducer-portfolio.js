@@ -8,7 +8,7 @@ export default function () {
             date: "Jan 2016",
             service: "Web Development in React",
             description: "This is my personal website created in React, Redux, ES6, Less.",
-            link : "https://pratikgarala.github.io/build/"
+            link : "https://github.com/pratikgarala/pratikgarala.github.io/"
         }
     ]
 }
