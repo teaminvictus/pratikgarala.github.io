@@ -1,0 +1,235 @@
+@width100: 100%;
+@height100: 100%;
+
+h1 {
+  border: 1px solid rgba(47, 46, 47, 0.59);
+  font-size: 37px;
+  font-weight: 900;
+  letter-spacing: 0.040em;
+  width: 414px;
+}
+.navactive {
+  border-bottom: 1px solid #96E16B;
+}
+p.desc-text {
+  font-size: 16px;
+  line-height: 30px;
+  text-align: justify;
+}
+.text-content.container {
+  margin-bottom: -51px;
+  margin-top: 65px;
+}
+.right-text {
+  p {
+    border-bottom: 1px solid;
+    padding: 10px 0;
+    text-align: left !important;
+  }
+}
+* {
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  &:before {
+    -moz-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+  &:after {
+    -moz-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+}
+.img-section-space {
+  margin-top: 5px;
+}
+.fa-2x {
+  padding-top: 5px;
+}
+@font-face {
+  font-family: 'icomoon';
+  font-style: normal;
+  font-weight: normal;
+  //src:url(require('../fonts/icomoonacfe.eot?-yinaf8'));
+  //src:url('../fonts/icomoond41d.eot?#iefix-yinaf8') format('embedded-opentype'), url('../fonts/icomoonacfe.woff?-yinaf8') format('woff'), url('../fonts/icomoonacfe.ttf?-yinaf8') format('truetype'), url('../fonts/icomoonacfe.svg?-yinaf8#icomoon') format('svg');
+}
+[class^="icon-"] {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'icomoon';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+[class*=" {
+	icon-"] {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'icomoon';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+//
+//.icon-mail {
+//  &:before {
+//    content: "\e600";
+//  }
+//}
+//.icon-github {
+//  &:before {
+//    content: "\e601";
+//  }
+//}
+//.icon-twitter {
+//  &:before {
+//    content: "\e602";
+//  }
+//}
+//.icon-linkedin {
+//  &:before {
+//    content: "\e603";
+//  }
+//}
+.carousel-slide {
+  float: right !important;
+  margin-right: -15px;
+}
+li.item {
+  background: rgb(244, 128, 66);
+  position: relative;
+  width: @width100;
+}
+.icon_knife {
+  -moz-transition-duration: 0.5s;
+  -moz-transition-property: -moz-transform;
+  -o-transition-duration: 0.5s;
+  -o-transition-property: -o-transform;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-property: -webkit-transform;
+  //background: url(data:image/svg+xml) no-repeat center;
+  height: 20px;
+  margin: 30px auto;
+  opacity: 0.8;
+  transition-duration: 0.5s;
+  transition-property: transformm;
+  width: 40px;
+  &:hover {
+    -moz-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+  }
+}
+body {
+  height: @height100;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: @height100;
+  margin: 0;
+  padding: 0;
+}
+.clear {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+h1, h2, p, span, a  {
+  color: #2f2e2f;
+  font-family: "museo-sans", helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.limit {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: @width100;
+}
+.color_animation {
+  -moz-transition: color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-out;
+  color: white !important;
+  margin-left: -30px !important;
+  margin-right: -30px;
+  text-decoration: initial;
+  transition: color 0.3s ease-in-out;
+  &:hover {
+    color: #9BE86F !important;
+  }
+}
+
+div#bs-example-navbar-collapse-1 {
+  height: 368px;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none !important;
+}
+.navbar-brand {
+  color: white !important;
+  font-family: 'Pacifico', cursive;
+  font-size: 34px !important;
+  text-decoration: none;
+}
+nav {
+  background: #1E1E1E !important;
+  color: white !important;
+  font-size: 18px;
+}
+li {
+  color: white !important;
+  word-spacing: 5px !important;
+}
+
+
+
+.starter_container {
+  background-position: center;
+  background-size: cover;
+  background: url('../images/vada_pav.jpg') no-repeat center center;
+  height: @height100;
+  margin-top: -21px;
+  min-width: @width100;
+  padding: 0;
+  text-align: center;
+}
+.follow_container {
+  position: absolute;
+  text-align: center;
+  top: 35%;
+  width: @width100;
+}
+.starter_follow {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0;
+  width: 80%;
+  z-index: 1;
+}
+.top-title {
+  color: white;
+  font-family: 'Playball', cursive;
+  font-size: 120px;
+  font-weight: 400;
+}
+.second-title {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: lighter;
+  text-transform: capitalize;
+}
+.white {
+  color: white;
+}
