@@ -1,6 +1,7 @@
 @import "variables.less";
 @import "mixins.less";
 @import "fonts_googleapi";
+@import "icons";
 @import "timeline";
 @import "skills";
 body {
@@ -233,6 +234,9 @@ section.success {
             position: relative;
             max-width: 400px;
             margin: 0 auto;
+			.img-shadow{
+				box-shadow: 5px 5px 5px #888888;
+			}
             .caption {
                 background: fade(@theme-success, 90%);
                 position: absolute;
@@ -437,6 +441,9 @@ footer {
 		}
 		.item-details {
 			margin: 30px 0;
+		}
+		.img-shadow{
+			box-shadow: 5px 5px 5px #888888;
 		}
 	}
     .close-modal {

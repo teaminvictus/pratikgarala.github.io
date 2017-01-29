@@ -8,14 +8,16 @@ class PortfolioList extends Component{
     renderPortfolio() {
         return this.props.portfolio.map((portfolio) => {
             return (
-                <a key={portfolio.id} href={"#" + portfolio.id} className="portfolio-link" data-toggle="modal">
-                    <div className="caption">
-                        <div className="caption-content">
-                            <i className="fa fa-search-plus fa-3x"></i>
+                <div key={portfolio.id} className="col-sm-6 portfolio-item">
+                    <a href={"#" + portfolio.id} className="portfolio-link" data-toggle="modal">
+                        <div className="caption">
+                            <div className="caption-content">
+                                <i className="fa fa-search-plus fa-3x"></i>
+                            </div>
                         </div>
-                    </div>
-                    <img src={require("../../img/portfolio/" + portfolio.thumbnail)} className="img-responsive" alt="" />
-                </a>
+                        <img src={require("../../img/portfolio/" + portfolio.thumbnail)} className="img-responsive img-shadow" alt="" />
+                    </a>
+                </div>
             );
         });
     }
@@ -23,9 +25,8 @@ class PortfolioList extends Component{
     render(){
         return(
             <div className="row">
-                <div className="col-lg-12 portfolio-item">
-                    {this.renderPortfolio()}
-                </div>
+
+                {this.renderPortfolio()}
             </div>
         );
     }
