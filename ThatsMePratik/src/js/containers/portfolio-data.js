@@ -8,7 +8,7 @@ class PortfolioList extends Component{
     renderPortfolio() {
         return this.props.portfolio.map((portfolio) => {
             return (
-                <div key={portfolio.id} className="col-sm-6 portfolio-item">
+                <div key={portfolio.id} className="col-sm-4 portfolio-item">
                     <a href={"#" + portfolio.id} className="portfolio-link" data-toggle="modal">
                         <div className="caption">
                             <div className="caption-content">
