@@ -46,6 +46,20 @@ export default function () {
             "for capturing and posting of the Expense Bills to SAP after all the valid approvals " +
             "from all the levels. Here Portal based application accesses SAP ECC and posts the documents.",
             link : "#"
+        },
+        {
+            id: "portfolio5",
+            title: "Prototype Web App for Government Organisation",
+            thumbnail: "gov_app.png",
+            client: "Monash University",
+            date: "Oct 2016",
+            service: "Web Application Development in Java",
+            description: "The goal of this project was to create a web based Java prototype " +
+            "of a Government Organisation/Department Enterprise Application. An application " +
+            "where member of public can search for various government services and use it and " +
+            "member of government can add new service, update or delete existing services as well " +
+            "as create new members and update or delete existing members.",
+            link : "https://github.com/pratikgarala/J2EE-Web-App-for-Gov-Org"
         }
     ]
 }

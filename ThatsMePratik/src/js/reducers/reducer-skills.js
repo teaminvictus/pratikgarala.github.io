@@ -4,7 +4,7 @@ export default function () {
         {
             id: 1,
             name: "React ",
-            level: 75,
+            level: 80,
         },
         {
             id: 2,
@@ -45,6 +45,16 @@ export default function () {
             id: 9,
             name: "Android Development",
             level: 85,
+        },
+        {
+            id: 10,
+            name: "Java EJBs",
+            level: 85,
+        },
+        {
+            id: 11,
+            name: "JSF",
+            level: 80,
         }
     ]
 }
