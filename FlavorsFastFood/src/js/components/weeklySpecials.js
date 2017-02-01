@@ -10,7 +10,7 @@ const WeeklySpecials = () => (
         </div>
         <div className="text-content container">
             <div className="col-md-6">
-                <ul className="image_box_story2 paddingtop10">
+                <div className="image_box_story2 paddingtop10">
                     <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
                         {/*<!-- Indicators -->*/}
                         <ol className="carousel-indicators">
@@ -41,11 +41,11 @@ const WeeklySpecials = () => (
                             </div>
                         </div>
                     </div>
-                </ul>
+                </div>
             </div>
             <div className="col-md-6">
                 <h1>Weekly special</h1>
-                <div className="fa-usd fa-2x"></div>
+                <div className="fa fa-usd fa-2x"></div>
                 <p className="desc-text">Here at Flovers
                     something special enters our doors every week, and we can’t help but show them off.
                     so stop by and experience our weekly specials.</p>

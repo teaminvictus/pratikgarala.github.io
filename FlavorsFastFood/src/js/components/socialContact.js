@@ -19,10 +19,11 @@ const SocialContact = () => (
             <div className="col-md-4">
                 <span className="social_heading">FOLLOW</span>
                 <ul className="social_icons">
-                    <li><a className="fa-facebook color_animation" href="#" target="_blank"></a></li>
-                    <li><a className="fa-twitter color_animation" href="#" target="_blank"></a></li>
-                    <li><a className="fa-instagram color_animation" href="#" target="_blank"></a></li>
-                    <li><a className="fa-google-plus color_animation" href="#"></a></li>
+                    {/*<li><a className="fa-facebook color_animation" href="#" target="_blank"></a></li>*/}
+                    <li><a href="#" className="btn-social btn-outline"><i className="fa fa-fw fa-facebook"></i></a></li>
+                    <li><a href="#" className="btn-social btn-outline"><i className="fa fa-fw fa-twitter"></i></a></li>
+                    <li><a href="#" className="btn-social btn-outline"><i className="fa fa-fw fa-instagram"></i></a></li>
+                    <li><a href="#" className="btn-social btn-outline"><i className="fa fa-fw fa-google-plus"></i></a></li>
                 </ul>
             </div>
             <div className="col-md-4">
