@@ -44,7 +44,7 @@ hr.star-primary:after {
 }
 
 #portfolio .portfolio-item {
-    margin: 0 0 15px;
+    margin: 15px 0 15px 0;
     right: 0;
 }
 #portfolio .portfolio-item .portfolio-link {
