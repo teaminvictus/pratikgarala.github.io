@@ -7,23 +7,25 @@
 }
 
 #map {
-    padding-top: 5%;
-    margin: 5%;
-    position: relative;
+    /*padding-top: 5%;*/
+    /*margin: 5%;*/
+    position: absolute;
 }
 
+
 #section_map{
-    position: relative;
+    position: absolute;
     text-align: center;
     background: lightgray;
     color: white;
+    top:100%;
     width:100%;
-    height: 800px;
+    height: 100%;
 }
 
 @media(max-width:1024px){
     #section_map{
-        height: 640px;
+        /*height: 640px;*/
     }
 }
 
