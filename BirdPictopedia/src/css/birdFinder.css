@@ -8,6 +8,11 @@ input {
     margin:50px auto;
 }
 
+
+
+
+
+
 input.search {
     margin: 0;
     text-align: center;
@@ -21,6 +26,48 @@ input.search {
     border-radius: 5px;
     font-size: 40px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+
+@media(max-width:414px) {
+    .search-form {
+        max-width:250px;
+        margin:20px auto;
+    }
+
+    input.search {
+        border: 4px solid #F7F7F7;
+        width: 110%;
+        left: -4%;
+        position: relative;
+        top: 4px;
+        z-index: 2;
+        border-radius: 5px;
+        font-size: 16px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+    }
+
+    input {
+        padding: 8px;
+    }
+}
+
+@media(max-width:320px) {
+    .search-form {
+        max-width:250px;
+        margin:20px auto;
+    }
+
+    input.search {
+        border: 4px solid #F7F7F7;
+        width: 110%;
+        left: -4%;
+        top: 4px;
+        font-size: 16px;
+    }
+
+    input {
+        padding: 8px;
+    }
 }
 
 .suggestions {
@@ -95,7 +142,7 @@ a {
 .card{
     position: relative;
     background-color: white;
-    height: 250px;
+    height: 260px;
     width: 300px;
     padding: 10px;
     margin: 10px;
@@ -130,7 +177,6 @@ a {
 
 
 #birdImages .image-item {
-    margin: 0 0 15px;
     right: 0;
 }
 #birdImages .image-item .image-link {
@@ -143,7 +189,7 @@ a {
     box-shadow: 5px 5px 5px #888888;
 }
 #birdImages .image-item .image-link .caption {
-    background: rgba(211, 211, 211, 0.9);
+    background: rgba(91, 153, 61, 0.54);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -175,3 +221,5 @@ a {
 #birdImages * {
     z-index: 2;
 }
+
+

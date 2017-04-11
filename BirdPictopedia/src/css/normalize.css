@@ -11,5 +11,36 @@ body{
 }
 
 .hideElement{
-    display: none;
+    /*display: none;*/
 }
+
+section {
+    text-align: center;
+    background: transparent;
+    color: grey;
+    height:100%;
+    width: 100%;
+    position: relative;
+}
+
+@media(max-height : 800px){
+    section {
+        height: 800px;
+    }
+}
+
+
+
+
+@media(max-width : 768px) {
+    section {
+        height: 100%;
+    }
+}
+
+@media(max-height : 414px){
+    section {
+        height: 700px;
+    }
+}
+
