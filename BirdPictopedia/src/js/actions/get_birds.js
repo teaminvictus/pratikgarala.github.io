@@ -4,6 +4,7 @@
 
 import ActionTypes from '../constants/action_types';
 import database from './database';
+import store from '../store/store'
 
 export function getBirds() {
     return dispatch => {
@@ -19,6 +20,25 @@ export function getBirds() {
     }
 }
 
+export function displayMatches(){
+    // value of input field
+    var wordToMatch = $("search").prevObject[0].activeElement.value;
+
+    // value of Birds
+    var birds = store.getState().birds.birds;
+    const matchBirds = findMatches(wordToMatch, birds);
+    return dispatch => {
+        dispatch(filterBirdsByNameAction(matchBirds))
+    };
+}
+
+
+function findMatches(wordToMatch, birds) {
+    return birds.filter(bird => {
+        const regex = new RegExp(wordToMatch, 'gi');
+        return bird.common_name.match(regex);
+    });
+}
 
 function getBirdsRequestedAction() {
     return {
@@ -37,4 +57,12 @@ function getBirdsFulfilledAction(birds) {
         type: ActionTypes.GetBirdsFulfilled,
         birds
     };
+}
+
+function filterBirdsByNameAction(matchBirds){
+
+    return {
+        type: ActionTypes.filterBirdsByName,
+        matchBirds
+    }
 }

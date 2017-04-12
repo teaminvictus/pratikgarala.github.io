@@ -24,7 +24,18 @@ export function birdsReducer(state = {}, action) {
             const newState = Object.assign({}, state, {
                 inProgress: false,
                 success: 'Got birds.',
-                birds : birds
+                birds : birds,
+                matchBirds : birds
+            });
+            return newState;
+        }
+        case ActionTypes.filterBirdsByName: {
+
+            const matchBirds = action.matchBirds;
+            const newState = Object.assign({}, state, {
+                inProgress: false,
+                success: 'Got filtered birds.',
+                matchBirds : matchBirds
             });
             return newState;
         }

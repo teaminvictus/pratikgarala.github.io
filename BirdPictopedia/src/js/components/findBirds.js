@@ -15,13 +15,14 @@ export default class FindBirds extends React.Component {
   }
 
   render() {
-    const birds = this.props.birds.birds;
+    const birds = this.props.birds.matchBirds;
     return (
     <section id="birdFinder" className="hideElement">
       <Navigation/>
       <div className="container">
         <form id="searchForm" className="search-form">
-          <input type="text" className="search" placeholder="Enter Bird Name..." />
+          <input type="text" className="search" placeholder="Enter Bird Name..." onChange={() => {this.props.onDisplayMatches()}} />
+          {console.log(this.props)}
         </form>
       </div>
 
@@ -36,7 +37,7 @@ export default class FindBirds extends React.Component {
             }else{
               var birdUrl = require("../../images/Birds/birdPlaceholder.jpg");
             }
-            console.log(birdUrl);
+            {/*console.log(birdUrl);*/}
             return (
                 <div key={bird.bird_Id} className="card image-item">
                   <a href={"#" + bird.bird_Id} className="image-link" data-toggle="modal">
@@ -55,11 +56,10 @@ export default class FindBirds extends React.Component {
           })}
           </div>
             ) : null}
-
         </div>
       </center>
     </section>
-
     );
   }
 }
+

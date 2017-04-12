@@ -3,7 +3,8 @@
  */
 
 import { connect } from 'react-redux';
-import { getBirds } from '../actions/get_birds';
+import {bindActionCreators} from 'redux';
+import { getBirds, displayMatches } from '../actions/get_birds';
 // import { addToInvite } from '../actions/add_invite';
 // import { watchGuestAddedEvent } from '../actions/guest_added_event';
 import FindBirds from '../components/findBirds';
@@ -17,8 +18,11 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         onGetBirds: () => dispatch(getBirds()),
+        onDisplayMatches: () => dispatch(displayMatches())
     };
 }
+
+
 
 const FindBirdsContainer = connect(mapStateToProps, mapDispatchToProps)(FindBirds);
 
