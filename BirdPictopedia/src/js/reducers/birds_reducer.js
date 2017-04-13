@@ -39,6 +39,15 @@ export function birdsReducer(state = {}, action) {
             });
             return newState;
         }
+        case ActionTypes.birdSelected: {
+            const newState = Object.assign({}, state, {
+                inProgress: false,
+                success: 'Bird Selected',
+                selectedBird : action.selectedBird,
+                birdUrl : action.birdUrl
+            });
+            return newState;
+        }
         default:
             return state;
     }

@@ -6,7 +6,8 @@ const actionTypes = {
     GetBirdsRejected: 'GET_BIRDS_REJECTED',
     GetBirdsFulfilled: 'GET_BIRDS_FULFILLED',
 
-    filterBirdsByName: 'FILTER_BIRDS_BY_NAME'
+    filterBirdsByName: 'FILTER_BIRDS_BY_NAME',
+    birdSelected: 'BIRD_SELECTED'
 };
 
 export default actionTypes;

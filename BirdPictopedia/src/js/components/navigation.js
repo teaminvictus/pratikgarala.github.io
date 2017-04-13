@@ -14,7 +14,7 @@ const Navigation = () => (
                 <ul className="sub-menu">
 
                     <li><Link to="/">Home</Link> </li>
-                    <li><Link to="/birdFinder">Bird Finder</Link> </li>
+                    <li><Link to="/findBirds">Bird Finder</Link> </li>
 
                     /* Home, Map of Bird, Bird Finder, Bird Identifier*/
                     {/*<li> <a id="homeLink" href="#">Home</a> </li>*/}

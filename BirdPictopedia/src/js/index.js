@@ -11,13 +11,15 @@ import {BrowserHistory} from 'react-router';
 
 import LandingPage from './components/landingPage';
 import FindBirdsContainer from './containers/birds_container';
+import BirdDetailContainer from './containers/birdDetail_container';
 
 const main = (
     <Provider store={store} >
         <Router history={BrowserHistory}>
             <div>
                 <Route path="/" exact={true} component={LandingPage} />
-                <Route path="/birdFinder" component={FindBirdsContainer} />
+                <Route path="/findBirds" exact={true} component={FindBirdsContainer} />
+                <Route path="/findBirds/:bird_Id"  component={BirdDetailContainer} />
             </div>
         </Router>
     </Provider>

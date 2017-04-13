@@ -20,6 +20,20 @@ export function getBirds() {
     }
 }
 
+export function selectBird(bird){
+    if(bird.valid_data.localeCompare("Yes") == 0){
+        var birdUrl = require("../../images/Birds/Repository/" + bird.bird_Id + ".jpg");
+    }else{
+        var birdUrl = require("../../images/Birds/birdPlaceholder.jpg");
+    }
+    console.log(birdUrl);
+    return{
+        type : ActionTypes.birdSelected,
+        selectedBird : bird,
+        birdUrl : birdUrl
+    }
+}
+
 export function displayMatches(){
     // value of input field
     var wordToMatch = $("search").prevObject[0].activeElement.value;
@@ -51,6 +65,8 @@ function getBirdsRejectedAction() {
         type: ActionTypes.GetBirdsRejected
     }
 }
+
+
 
 function getBirdsFulfilledAction(birds) {
     return {

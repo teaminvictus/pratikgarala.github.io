@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from '../components/navigation';
+import {Link} from 'react-router-dom';
 
 export default class FindBirds extends React.Component {
 
@@ -22,7 +23,6 @@ export default class FindBirds extends React.Component {
       <div className="container">
         <form id="searchForm" className="search-form">
           <input type="text" className="search" placeholder="Enter Bird Name..." onChange={() => {this.props.onDisplayMatches()}} />
-          {console.log(this.props)}
         </form>
       </div>
 
@@ -40,17 +40,21 @@ export default class FindBirds extends React.Component {
             {/*console.log(birdUrl);*/}
             return (
                 <div key={bird.bird_Id} className="card image-item">
-                  <a href={"#" + bird.bird_Id} className="image-link" data-toggle="modal">
-                    <div className="caption">
-                      <div className="caption-content">
-                        <i className="fa fa-search-plus fa-3x"/>
+                  <Link to={"/findBirds/" + bird.bird_Id} onClick={() => {this.props.onSelectBird(bird)}}>
+                  {/*<a href={"#" + bird.bird_Id} className="image-link" data-toggle="modal">*/}
+                    <div className="image-link">
+                      <div className="caption">
+                        <div className="caption-content">
+                          <i className="fa fa-search-plus fa-3x"/>
+                        </div>
+                      </div>
+                      <img src={birdUrl} height="200" width="300"/>
+                      <div className="title">
+                        <span>{bird.common_name}</span>
                       </div>
                     </div>
-                    <img src={birdUrl} height="200" width="300"/>
-                    <div className="title">
-                      <span>{bird.common_name}</span>
-                    </div>
-                  </a>
+                  {/*</a>*/}
+                  </Link>
                 </div>
             );
           })}
