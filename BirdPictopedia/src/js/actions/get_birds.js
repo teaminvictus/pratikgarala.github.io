@@ -26,7 +26,7 @@ export function selectBird(bird){
     }else{
         var birdUrl = require("../../images/Birds/birdPlaceholder.jpg");
     }
-    console.log(birdUrl);
+
     return{
         type : ActionTypes.birdSelected,
         selectedBird : bird,
@@ -46,6 +46,12 @@ export function displayMatches(){
     };
 }
 
+export function changeBirdsForPage(birdsForPage){
+    return{
+        type : ActionTypes.changeBirdsForPage,
+        birdsForPage
+    }
+}
 
 function findMatches(wordToMatch, birds) {
     return birds.filter(bird => {

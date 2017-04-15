@@ -7,27 +7,49 @@ import Header from '../components/header';
 import Map from '../components/map';
 
 
+import Preloader from "./preloader";
+import NavigationBar from "./NavigationBar";
+import MainSlider from "./mainSlider";
+import FeatureSection from './featureSection';
+
 require("jquery");
+
 require("bootstrap-webpack");
 require("font-awesome-webpack");
-require("../../css/navigation.css");
-require("../../css/header.css");
-require("../../css/map.css");
+require("../../fonts/font-awesome/css/font-awesome.min.css");
+require("../../fonts/flaticons/flaticon.css");
 require("../../css/normalize.css");
-require("../../css/tooltip-curved.css");
-require("../js/navigation");
+require("../../css/preloader.css");
+require("../../css/navigationBar.css");
+require("../../css/mainSlider.css");
+require("../../css/featureSection.css");
+require("../../css/font.css");
+require("../../css/animate.css");
+require("../../css/yellowpaws.css");
 require("../../css/birdFinder.css");
 require("../../css/birdDetail.css");
 
 
+
+
 const LandingPage = () => (
-    <div>
-        <Navigation/>
-        <div id="landingPage" >
-            <Header/>
-            <Map/>
-        </div>
+    <div className="rootDiv">
+        {
+            new WOW().init()
+        }
+        {/*<Preloader/>*/}
+        {/*<NavigationBar/>*/}
+        <MainSlider/>
+        <FeatureSection/>
+        {/*<div id="landingPage" >*/}
+            {/*<Header/>*/}
+            {/*<Map/>*/}
+        {/*</div>*/}
     </div>
 );
+
+
+require("../js/main");
+
 
 export default LandingPage;

@@ -34,7 +34,7 @@ const BirdDetail = ({match}) => (
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="modal-body birdTitle">
-                                <h2>{store.getState().birds.selectedBird.common_name}</h2>
+                                <h4>{store.getState().birds.selectedBird.common_name}</h4>
                             </div>
                         </div>
                         <div className="row">

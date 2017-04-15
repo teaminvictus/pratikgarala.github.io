@@ -9,17 +9,24 @@ import store from './store/store';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {BrowserHistory} from 'react-router';
 
+import Preloader from './components/preloader';
+import NavigationBar from './components/NavigationBar';
 import LandingPage from './components/landingPage';
 import FindBirdsContainer from './containers/birds_container';
 import BirdDetailContainer from './containers/birdDetail_container';
 
+
+
+
 const main = (
     <Provider store={store} >
         <Router history={BrowserHistory}>
-            <div>
+            <div className="rootDiv">
+                <Preloader/>
+                <NavigationBar/>
                 <Route path="/" exact={true} component={LandingPage} />
-                <Route path="/findBirds" exact={true} component={FindBirdsContainer} />
-                <Route path="/findBirds/:bird_Id"  component={BirdDetailContainer} />
+                <Route path="/birdFinder" exact={true} component={FindBirdsContainer} />
+                <Route path="/birdFinder/:bird_Id"  component={BirdDetailContainer} />
             </div>
         </Router>
     </Provider>
