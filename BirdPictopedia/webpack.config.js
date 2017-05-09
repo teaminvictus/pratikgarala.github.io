@@ -11,7 +11,8 @@ module.exports = {
         inline: true,
         contentBase: './build',
         port: 3000,
-        historyApiFallback:true
+        publicPath : '/',
+        historyApiFallback:true,
     },
     devtool: 'source-map',
     entry: './src/js/index.js',
@@ -71,6 +72,7 @@ module.exports = {
     },
     output: {
         path: './build',
+
         filename: 'js/bundle.min.js'
     },
     plugins: [

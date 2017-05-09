@@ -3,7 +3,6 @@ Template Name: Happy Paws
 Author: Ingrid Kuhn
 Author URI: http://themeforest.net/user/ingridk
 */
-
 //Strict Mode 
 (function($) {
     "use strict";
@@ -62,7 +61,10 @@ Author URI: http://themeforest.net/user/ingridk
 
         //Navbar collapse close on click
 
-        $('.navbar li').on('click', function() {
+        $('.navbar li').on('click', function(e) {
+        	// console.log(document.querySelectorAll(".navbar li.active"));
+			document.querySelectorAll(".navbar li.active")[0].classList.remove("active");
+			e.currentTarget.classList.add("active");
             if ($('.navbar-toggle').css('display') != 'none') {
                 $(".navbar-toggle").trigger("click");
             }
@@ -71,7 +73,7 @@ Author URI: http://themeforest.net/user/ingridk
 
 
 
-        //Scrolling feature 
+        // Scrolling feature
 		
         // $('.page-scroll a').bind('click', function(event) {
         //     var $anchor = $(this);
@@ -86,17 +88,17 @@ Author URI: http://themeforest.net/user/ingridk
 
 
 
-		//	Back Top Link
-        //
-		// var offset = 5200;
-		// var duration = 500;
-		// $(window).scroll(function() {
-		// 	if ($(this).scrollTop() > offset) {
-		// 		$('.back-to-top').fadeIn(400);
-		// 	} else {
-		// 		$('.back-to-top').fadeOut(400);
-		// 	}
-		// });
+		//Back Top Link
+
+		var offset = 5200;
+		var duration = 500;
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > offset) {
+				$('.back-to-top').fadeIn(400);
+			} else {
+				$('.back-to-top').fadeOut(400);
+			}
+		});
 
 
 
@@ -362,36 +364,44 @@ Author URI: http://themeforest.net/user/ingridk
     //
     // //Window load function
     // $(window).load(function() {
+
+		//Portfolio Isotope Filter
+
+
+		// $("#postcodeInput").onChange( function() {
+		// var $container = $('#lightbox');
+		// $container.isotope({
+		// 	filter: '*',
+		// 	animationOptions: {
+		// 		duration: 750,
+		// 		easing: 'linear',
+		// 		queue: false
+		// 	}
+		// });
+		// $('.cat a').click(function () {
+		// 	$('.cat .active').removeClass('active');
+		// 	$(this).addClass('active');
+		// 	var selector = $(this).attr('data-filter');
+		// 	$container.isotope({
+		// 		filter: selector,
+		// 		animationOptions: {
+		// 			duration: 750,
+		// 			easing: 'linear',
+		// 			queue: false
+		// 		}
+		// 	});
+		// 	return false;
+		// });
+	// });
     //
-    // //Portfolio Isotope Filter
-    //
-    //     var $container = $('#lightbox');
-    //     $container.isotope({
-    //         filter: '*',
-    //         animationOptions: {
-    //             duration: 750,
-    //             easing: 'linear',
-    //             queue: false
-    //         }
-    //     });
-    //     $('.cat a').click(function() {
-    //         $('.cat .active').removeClass('active');
-    //         $(this).addClass('active');
-    //         var selector = $(this).attr('data-filter');
-    //         $container.isotope({
-    //             filter: selector,
-    //             animationOptions: {
-    //                 duration: 750,
-    //                 easing: 'linear',
-    //                 queue: false
-    //             }
-    //         });
-    //         return false;
-    //     });
-    //
+
     });
-	
+
+
 
 })(jQuery);
+
+
+
 
  

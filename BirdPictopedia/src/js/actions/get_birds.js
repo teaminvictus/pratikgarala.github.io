@@ -4,7 +4,7 @@
 
 import ActionTypes from '../constants/action_types';
 import database from './database';
-import store from '../store/store'
+import store from '../store/store';
 
 export function getBirds() {
     return dispatch => {
@@ -21,8 +21,8 @@ export function getBirds() {
 }
 
 export function selectBird(bird){
-    if(bird.valid_data.localeCompare("Yes") == 0){
-        var birdUrl = require("../../images/Birds/Repository/" + bird.bird_Id + ".jpg");
+    if(bird.isImageAvailable.localeCompare("1") == 0){
+        var birdUrl = require("../../images/Birds/Repository/" + bird.birdId + ".jpg");
     }else{
         var birdUrl = require("../../images/Birds/birdPlaceholder.jpg");
     }
@@ -34,17 +34,55 @@ export function selectBird(bird){
     }
 }
 
+export function selectBirdForRecordSighting(bird) {
+    $("#birdName").val(bird.commonName);
+    return dispatch => {
+        dispatch(getSelectedBirdsForRecordSightingFulfilled(bird));
+    }
+}
+
+function getSelectedBirdsForRecordSightingFulfilled (bird){
+    const matchBirdsForRecordSighting = [];
+    return{
+        type : ActionTypes.GetSelectedBirdForRecordSightingFulfilled,
+        selectedBirdForRecordSighting : bird,
+        matchBirdsForRecordSighting
+    }
+}
+
 export function displayMatches(){
     // value of input field
     var wordToMatch = $("search").prevObject[0].activeElement.value;
 
+
     // value of Birds
     var birds = store.getState().birds.birds;
     const matchBirds = findMatches(wordToMatch, birds);
+    var matchBirdsForRecordSighting = []
+    if(wordToMatch.length != 0) {
+        matchBirdsForRecordSighting = matchBirds;
+    }
     return dispatch => {
         dispatch(filterBirdsByNameAction(matchBirds))
     };
 }
+
+export function displayMatchesForRecordSighting(){
+    // value of input field
+    var wordToMatch = $("search").prevObject[0].activeElement.value;
+
+    if(wordToMatch.length == 0) {
+        wordToMatch = "!@#$%^&*()";
+    }
+
+    // value of Birds
+    var birds = store.getState().birds.birds;
+    const matchBirdsForRecordSighting = findMatches(wordToMatch, birds);
+    return dispatch => {
+        dispatch(filterBirdsForRecordSightingByNameAction(matchBirdsForRecordSighting))
+    };
+}
+
 
 export function changeBirdsForPage(birdsForPage){
     return{
@@ -56,7 +94,7 @@ export function changeBirdsForPage(birdsForPage){
 function findMatches(wordToMatch, birds) {
     return birds.filter(bird => {
         const regex = new RegExp(wordToMatch, 'gi');
-        return bird.common_name.match(regex);
+        return bird.commonName.match(regex);
     });
 }
 
@@ -72,8 +110,6 @@ function getBirdsRejectedAction() {
     }
 }
 
-
-
 function getBirdsFulfilledAction(birds) {
     return {
         type: ActionTypes.GetBirdsFulfilled,
@@ -85,6 +121,14 @@ function filterBirdsByNameAction(matchBirds){
 
     return {
         type: ActionTypes.filterBirdsByName,
-        matchBirds
+        matchBirds,
+    }
+}
+
+function filterBirdsForRecordSightingByNameAction(matchBirdsForRecordSighting){
+
+    return {
+        type: ActionTypes.filterBirdsForRecordSightingByName,
+        matchBirdsForRecordSighting
     }
 }

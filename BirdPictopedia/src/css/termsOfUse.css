@@ -1,0 +1,13 @@
+#termsOfUse{
+    margin-top:90px;
+    background-color: #fff;
+    /*height: 100%;*/
+}
+
+#termsOfUse ul{
+    padding-left: 5%;
+}
+
+#termsOfUse ul li{
+    list-style: circle;
+}

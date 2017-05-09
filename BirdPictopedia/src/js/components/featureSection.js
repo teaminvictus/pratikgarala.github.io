@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const birdIdentifier = require("../../images/Birds/birdIdentifier.jpg");
 const birdFinder = require("../../images/Birds/birdFinder.jpg");
@@ -20,21 +21,27 @@ const FeatureSection = () => (
         <div className="container">
             <div className="row">
                 {/*<!-- item 1-->*/}
+
                 <div className="col-md-4 col-sm-12 wow fadeInLeft" data-wow-delay="0.2s">
-                    <div className="img-wrapper">
-                        <img src={birdIdentifier} alt="" className="img-responsive"/>
-                    </div>
+                    <Link to="/birdIdentifier" >
+                        <div className="img-wrapper">
+                            <img src={birdIdentifier} alt="" className="img-responsive"/>
+                        </div>
+                    </Link>
                     <h4>Bird Identifier</h4>
                     <p className="margin">
                         Identify strange and unknown birds around your neighbourhood.
                     </p>
                 </div>
 
+
                 {/*<!-- item 2-->*/}
                 <div className="col-md-4 col-sm-12 wow fadeInUp" data-wow-delay="0.2s">
-                    <div className="img-wrapper">
-                        <img src={birdFinder} alt="" className="img-responsive"/>
-                    </div>
+                    <Link to="/birdFinder" >
+                        <div className="img-wrapper">
+                            <img src={birdFinder} alt="" className="img-responsive"/>
+                        </div>
+                    </Link>
                     <h4>Bird Finder</h4>
                     <p className="margin">
                         Discover more about birds by searching them by their name.
@@ -43,9 +50,11 @@ const FeatureSection = () => (
 
                 {/*<!-- item 3-->*/}
                 <div className="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
-                    <div className="img-wrapper">
-                        <img src={treeFinder} alt="" className="img-responsive"/>
-                    </div>
+                    <Link to="/treeFinder" >
+                        <div className="img-wrapper">
+                            <img src={treeFinder} alt="" className="img-responsive"/>
+                        </div>
+                    </Link>
                     <h4>Tree Finder</h4>
                     <p>
                         Find out about native trees that can attract birds.

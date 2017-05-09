@@ -4,7 +4,6 @@
 import React from 'react';
 
 
-
 const Preloader = () => (
     <div id="preloader">
         <div className="spinner">

@@ -1,0 +1,287 @@
+#btMatrix{
+    position: absolute;
+    margin-top:63px;
+    /*height: 100%;*/
+    width: 100%;
+}
+
+
+#btMatrix input {
+    width: 100%;
+    padding:10px;
+    margin: 8px;
+    height: 5rem;
+    margin-bottom: 0px;
+}
+
+#btMatrix input[type=text] {
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    /*background-color: white;*/
+    background-image: url('../images/searchicon.png');
+    background-position: 12px 12px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#btMatrix input:focus {
+    outline: none !important;
+    border:1px solid #d35400;
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 3px;
+}
+
+
+@media(max-width:414px) {
+
+    #btMatrix input.search {
+        border: 4px solid #F7F7F7;
+        width: 110%;
+        left: -4%;
+        position: relative;
+        top: 4px;
+        z-index: 2;
+        border-radius: 5px;
+        font-size: 16px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+    }
+
+    #btMatrix input {
+        padding: 8px;
+    }
+}
+
+@media(max-width:320px) {
+
+    #btMatrix input.search {
+        border: 4px solid #F7F7F7;
+        width: 110%;
+        left: -4%;
+        top: 4px;
+        font-size: 16px;
+    }
+
+    #btMatrix input {
+        padding: 8px;
+    }
+}
+
+
+.progressBar{
+    height: 75px !important;
+    background: #ffffff !important;
+    position: fixed !important;
+    z-index: 9 !important;
+    border-bottom: 1px solid #DBDBDB !important;
+    width: 100%;
+}
+
+.btBottom{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    bottom: 20px;
+}
+
+.btBottom .btn{
+    width : 100%;
+}
+
+
+.btSteps{
+    margin-top : 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    align-items: center;
+    /*position: absolute;*/
+    align-content: center;
+    /*margin-top : 60px;*/
+}
+
+.btStepsTitle{
+    margin-top : 120px;
+}
+
+.btSteps .btn{
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.flexer, #btMatrix .progress-indicator {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flexer-element, #btMatrix .progress-indicator > li {
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    flex: 1;
+}
+
+#btMatrix .progress-indicator {
+    margin: 10px;
+    padding: 10px;
+    font-size: 80%;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+#btMatrix .progress-indicator > li {
+    list-style: none;
+    text-align: center;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    text-overflow: ellipsis;
+    color: #bbb;
+    display: block;
+}
+/*#btMatrix .progress-indicator > li:hover {*/
+    /*color: #6f6f6f;*/
+/*}*/
+#btMatrix .progress-indicator > li .bubble {
+    border-radius: 1000px;
+    width: 20px;
+    height: 20px;
+    background-color: #bbb;
+    display: block;
+    margin: 0 auto 0.5em auto;
+    border-bottom: 1px solid #888888;
+}
+#btMatrix .progress-indicator > li .bubble:before,
+#btMatrix .progress-indicator > li .bubble:after {
+    display: block;
+    position: absolute;
+    top: 9px;
+    width: 100%;
+    height: 3px;
+    content: '';
+    background-color: #bbb;
+}
+#btMatrix .progress-indicator > li .bubble:before {
+    left: 0;
+}
+#btMatrix .progress-indicator > li .bubble:after {
+    right: 0;
+}
+#btMatrix .progress-indicator > li:first-child .bubble:before,
+#btMatrix .progress-indicator > li:first-child .bubble:after {
+    width: 50%;
+    margin-left: 50%;
+}
+#btMatrix .progress-indicator > li:last-child .bubble:before,
+#btMatrix .progress-indicator > li:last-child .bubble:after {
+    width: 50%;
+    margin-right: 50%;
+}
+#btMatrix .progress-indicator > li.completed {
+    color: #f29c12;
+}
+#btMatrix .progress-indicator > li.completed .bubble {
+    background-color: #f29c12;
+    color: #f29c12;
+    border-color: #654106;
+}
+#btMatrix .progress-indicator > li.completed .bubble:before, #btMatrix .progress-indicator > li.completed .bubble:after {
+    background-color: #f29c12;
+    border-color: #654106;
+}
+#btMatrix .progress-indicator > li.active {
+    color: #d35400;
+}
+#btMatrix .progress-indicator > li.active .bubble {
+    background-color: #d35400;
+    color: #d35400;
+    border-color: #3a1700;
+}
+#btMatrix .progress-indicator > li.active .bubble:before, #btMatrix .progress-indicator > li.active .bubble:after {
+    background-color: #d35400;
+    border-color: #3a1700;
+}
+#btMatrix .progress-indicator > li a:hover .bubble {
+    background-color: #5671d0;
+    color: #5671d0;
+    border-color: #1f306e;
+}
+#btMatrix .progress-indicator > li a:hover .bubble:before, #btMatrix .progress-indicator > li a:hover .bubble:after {
+    background-color: #5671d0;
+    border-color: #1f306e;
+}
+
+.hideElement{
+    display: none;
+}
+
+
+
+.unSelect{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin-left: 85%;
+    margin-top: 30%;
+    z-index: 3;
+    background: url("../images/Birds/unselect.png");
+}
+
+.select{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin-left: 85%;
+    margin-top: 30%;
+    z-index: 3;
+    background: url("../images/Birds/select1.png");
+}
+
+@media(max-width:768px) {
+    #btMatrix{
+        margin-top:58px;
+    }
+
+}
+
+@media(max-width:414px) {
+    .select{
+        margin-top: -5%;
+    }
+    .unSelect{
+        margin-top: -5%;
+    }
+    .progressBar{
+        height: 90px !important;
+    }
+
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #aaaaaa;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+.vertical-text {
+    transform: rotate(90deg);
+    text-align: center;
+    border: 1px solid #aaaaaa;
+    padding: 0px;
+}

@@ -1,9 +1,12 @@
 import React from 'react';
-import Navigation from '../components/navigation';
 import {Link} from 'react-router-dom';
 import Pagination from 'react-js-pagination';
+import store from '../store/store';
+import Footer from './footer';
 
-const IMAGES_PER_PAGE = 9;
+const IMAGES_PER_PAGE = 8;
+
+import endangered from '../../images/Birds/endangered.png';
 
 export default class FindBirds extends React.Component {
 
@@ -17,9 +20,8 @@ export default class FindBirds extends React.Component {
 
 
     componentDidMount() {
-        if(this.props.birds.birds == null){
+        if(store.getState().birds.birds == null){
             this.props.onGetBirds();
-            console.log(this.props.birds);
         }
     }
 
@@ -33,13 +35,22 @@ export default class FindBirds extends React.Component {
 
     }
 
+    renderEndangeredStatus(bird){
+        if(bird.status.localeCompare("Endangered") == 0){
+            return(
+                <div className="endangered">
+                    <img src={endangered} height="30" width="30" />
+                </div>
+            );
+        }
+    }
+
     render() {
     const birds = this.props.birds.matchBirds;
     const birdCount = birds && birds.length;
     const birdsForPage = this.props.birds.birdsForPage;
     return (
     <section id="birdFinder">
-
         <div className="searchBar">
             <div className="container">
                 <form >
@@ -48,57 +59,57 @@ export default class FindBirds extends React.Component {
             </div>
         </div>
 
-            <div id="birdPagination">
-                <center>
-                    <Pagination
-                        activePage={this.state.activePage}
-                        itemsCountPerPage={IMAGES_PER_PAGE}
-                        totalItemsCount= {birdCount}
-                        pageRangeDisplayed={10}
-                        onChange={this.handlePageChange.bind(this)}
-                    />
-                </center>
-            </div>
-            <div id="birdImages">
-                <center>
-                    {birdsForPage && birdsForPage.length > 0 ? (
-                        <div>
-                            {birdsForPage.map((bird, index) => {
 
-                                if(bird.valid_data.localeCompare("Yes") == 0){
-                                    var birdUrl = require("../../images/Birds/Repository/" + bird.bird_Id + ".jpg");
-                                }else{
-                                    var birdUrl = require("../../images/Birds/birdPlaceholder.jpg");
-                                }
-                                {/*console.log(birdUrl);*/}
-                                return (
-                                    <div key={bird.bird_Id} className="card image-item">
-                                        <Link to={"/birdFinder/" + bird.bird_Id} onClick={() => {this.props.onSelectBird(bird)}}>
-                                            {/*<a href={"#" + bird.bird_Id} className="image-link" data-toggle="modal">*/}
-                                            <div className="image-link">
-                                                <div className="caption">
-                                                    <div className="caption-content">
-                                                        <i className="fa fa-search-plus fa-3x"/>
-                                                    </div>
-                                                </div>
-                                                <img src={birdUrl} height="200" width="300"/>
-                                                <div className="title">
-                                                    <span>{bird.common_name}</span>
+        <div id="birdImages">
+            <center>
+                {birdsForPage && birdsForPage.length > 0 ? (
+                    <div>
+                        {birdsForPage.map((bird, index) => {
+
+                            if(bird.isImageAvailable == 1){
+                                var birdUrl = require("../../images/Birds/Repository/" + bird.birdId + ".jpg");
+                            }else{
+                                var birdUrl = require("../../images/Birds/birdPlaceholder.jpg");
+                            }
+                            {/*console.log(birdUrl);*/}
+                            return (
+                                <div key={bird.birdId} className="card image-item">
+                                    {/*<Link to={"/birdFinder/" + bird.birdId} onClick={() => {this.props.onSelectBird(bird)}}>*/}
+                                    <Link to={"/birdFinder/" + bird.birdId} >
+                                        {/*<a href={"#" + bird.bird_Id} className="image-link" data-toggle="modal">*/}
+                                        <div className="image-link">
+                                            <div className="caption">
+                                                <div className="caption-content">
+                                                    <i className="fa fa-search-plus fa-3x"/>
                                                 </div>
                                             </div>
-                                            {/*</a>*/}
-                                        </Link>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    ) : null}
-                </center>
-            {/*</div>*/}
-
+                                            {this.renderEndangeredStatus(bird)}
+                                            <img src={birdUrl} height="200" width="300"/>
+                                            <div className="title">
+                                                <span>{bird.commonName}</span>
+                                            </div>
+                                        </div>
+                                        {/*</a>*/}
+                                    </Link>
+                                </div>
+                            );
+                        })}
+                    </div>
+                ) : null}
+            </center>
         </div>
-
-
+        <div id="birdPagination">
+            <center>
+                <Pagination
+                    activePage={this.state.activePage}
+                    itemsCountPerPage={IMAGES_PER_PAGE}
+                    totalItemsCount= {birdCount}
+                    pageRangeDisplayed={5}
+                    onChange={this.handlePageChange.bind(this)}
+                />
+            </center>
+        </div>
+        <Footer/>
     </section>
     );
     }

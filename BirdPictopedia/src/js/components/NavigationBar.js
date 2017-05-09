@@ -18,25 +18,30 @@ const NavigationBar = () => (
                 </button>
                 {/*<!-- Logo -->*/}
                 <div className="page-scroll">
-                    <a className="navbar-brand" href="#page-top">
-                        {/*<!--Font Icon logo and text -->*/}
-                        <img src={logo2} width="75" height="55"/>
-                        <img src={logo1} width="150" height="40"/>
-                        {/*<span className="flaticon-animals-allowed"></span>Happy Paws*/}
-                    </a>
+                    <Link to="/">
+                        <div className="navbar-brand">
+                            {/*<!--Font Icon logo and text -->*/}
+                            <img src={logo2} width="75" height="55"/>
+                            <img src={logo1} width="150" height="40"/>
+                            {/*<span className="flaticon-animals-allowed"></span>Happy Paws*/}
+                        </div>
+                    </Link>
                 </div>
             </div>
             {/*<!-- Collect the nav links, forms, and other content for toggling -->*/}
             <div className="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul className="nav navbar-nav page-scroll">
                     <li className="active"><Link to="/">Home</Link></li>
+                    <li><Link to="/matrix">Matrix</Link></li>
                     <li><Link to="/birdIdentifier">Bird Identifier</Link></li>
                     <li><Link to="/birdFinder">Bird Finder</Link></li>
                     <li><Link to="/treeFinder">Tree Finder</Link></li>
+                    <li><Link to="/recordSightings">Record Sightings</Link></li>
+                    <li><Link to="/about">About us</Link></li>
                     {/*<li><a href="#gallery">Birds in Backyard</a></li>*/}
-                    <li><Link to="/matrix">Matrix</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/login">Login</Link></li>
+
+                    {/*<li><Link to="/about">About</Link></li>*/}
+                    {/*<li><Link to="/login">Login</Link></li>*/}
                 </ul>
             </div>
         </div>

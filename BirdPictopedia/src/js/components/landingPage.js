@@ -2,17 +2,17 @@
  * Created by pratikgarala on 11/4/17.
  */
 import React from 'react';
-import Navigation from '../components/navigation';
-import Header from '../components/header';
-import Map from '../components/map';
 
+import store from '../store/store';
 
-import Preloader from "./preloader";
-import NavigationBar from "./NavigationBar";
 import MainSlider from "./mainSlider";
 import FeatureSection from './featureSection';
+import HelpSection from './helpSection';
+import OurStats from './ourStats';
+import Footer from './footer';
 
 require("jquery");
+
 
 require("bootstrap-webpack");
 require("font-awesome-webpack");
@@ -28,28 +28,46 @@ require("../../css/animate.css");
 require("../../css/yellowpaws.css");
 require("../../css/birdFinder.css");
 require("../../css/birdDetail.css");
+require("../../css/treeFinder.css");
+require("../../css/birdIdentifier.css");
+require("../../css/helpSection.css");
+require("../../fonts/flaticons/flaticon.css");
+require("../../css/ourStats.css");
+require("../../css/footer.css");
+require("../../css/btMatrix.css");
+require("../../css/about.css");
+require("../../css/recordShightings.css");
+require("../../css/termsOfUse.css");
+require("../../css/privacyPolicy.css");
+require("materialize-css");
 
 
+class LandingPage extends React.Component {
 
-
-const LandingPage = () => (
-    <div className="rootDiv">
-        {
-            new WOW().init()
+    componentDidMount() {
+        if(store.getState().birds.birds == null){
+            // this.props.onGetBirds();
         }
-        {/*<Preloader/>*/}
-        {/*<NavigationBar/>*/}
-        <MainSlider/>
-        <FeatureSection/>
-        {/*<div id="landingPage" >*/}
-            {/*<Header/>*/}
-            {/*<Map/>*/}
-        {/*</div>*/}
-    </div>
-);
+    }
 
+
+    render() {
+        return (
+            <div className="rootDiv">
+                {
+                    new WOW().init()
+                }
+                <MainSlider/>
+                <FeatureSection/>
+                <OurStats/>
+                <HelpSection/>
+                <Footer/>
+            </div>
+        );
+    }
+}
 
 require("../js/main");
-
+// require("../../vendor/materialize/js/materialize");
 
 export default LandingPage;
