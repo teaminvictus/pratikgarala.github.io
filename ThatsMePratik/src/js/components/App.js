@@ -26,8 +26,6 @@ const App = () => (
         <Footer/>
         <PortfolioDetail/>
 
-
-
     </div>
 );
 
