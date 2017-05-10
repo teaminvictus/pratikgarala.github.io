@@ -10,7 +10,7 @@ import RequestModal from './requestModal';
 
 require("jquery");
 require("bootstrap-webpack");
-require("../../less/main.less");
+require("../../sass/main.sass");
 
 
 const App = () => (

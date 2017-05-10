@@ -13,7 +13,6 @@ export default class RecordSightings extends React.Component {
 
     validateEmail(email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        console.log(re.test(email));
         return re.test(email);
     }
 
@@ -39,12 +38,10 @@ export default class RecordSightings extends React.Component {
             };
 
 
-            console.log(JSON.stringify(payload));
 
             var data = new FormData();
             data.append("json", JSON.stringify(payload));
 
-            console.log(data);
 
             fetch("https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth",
                 {
@@ -68,6 +65,17 @@ export default class RecordSightings extends React.Component {
                     $("#errorMsg").text("Please Check your network connection..!!");
                 });
         }
+    }
+
+    handleOkBtn(){
+        $("#inviteForm")[0].classList.remove("hideElement");
+        $("#afterSend")[0].classList.add("hideElement");
+        $("#btnSend").val("Send");
+        $("#btnSend")[0].classList.remove("btn-in-progress");
+        $("#name").val("");
+        $("#email").val("");
+        $("#cnfEmail").val("");
+
     }
 
     render(){
@@ -126,7 +134,7 @@ export default class RecordSightings extends React.Component {
                                 </p>
                                 <div className="row bottom_margin_20">
                                     <div className="col-lg-12">
-                                        <button type="button" className="btn btn-default" data-dismiss="modal">
+                                        <button type="button" className="btn btn-default" data-dismiss="modal" onClick={() => this.handleOkBtn()}>
                                         Ok
                                         </button>
                                     </div>
