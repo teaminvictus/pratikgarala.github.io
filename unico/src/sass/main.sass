@@ -129,7 +129,7 @@ hr
     width: 100%
     background-color: $theme-light-gray
     height: 60px
-    top: 320px
+    bottom: 0px
     .number
       font-weight: bold
       font-size: 2em
@@ -137,6 +137,25 @@ hr
       font-size: 0.8em
       text-transform: uppercase
       font-weight: bold
+
+@media (min-width: 768px)
+  .card
+    .recommendation
+      .number
+        font-size: 1.2em
+      .subText
+        font-size: 0.7em
+
+@media (min-width: 300px)
+  .card
+    .col-lg-3
+      height: 410px
+    .recommendation
+      height: 90px
+      .number
+        font-size: 1.2em
+      .subText
+        font-size: 0.7em
 
 #listView
   .container

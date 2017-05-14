@@ -51,4 +51,9 @@ All you need to do is,
 in "actions/getProducts.js" file.
 
 
+** Input Validation **
+
+If user enters a number outside of 0-100 will be converted to default value 1.
+
+
 
