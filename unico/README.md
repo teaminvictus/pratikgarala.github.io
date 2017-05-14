@@ -2,8 +2,6 @@
 
 ## Setup / run
 
-If using **yarn**
-
 > Note:
 > This will use ports 3000
 > if they are already being used it will fail
@@ -30,7 +28,7 @@ In a Grid view, given that a product can be comprised of more than 1 item and th
 
 If a tile contains so many that it's width is wider than available on the right then it it will drop to the next line.
 
-** Total Products and Total Cost **
+**Total Products and Total Cost**
 
 It was not mentioned what exactly Total Products and Total Cost for whether it shows total available products or total products in carts. 
 
@@ -40,7 +38,7 @@ here, one product means 1 cartons. So if user has selected 5 cartons on 1st prod
 
 
 
-** Firebase **
+**Firebase**
 
 To keep a feel of real time database, I have pushed a given payload file to a firebase and I am accessing data from there. 
 
