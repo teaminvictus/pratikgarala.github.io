@@ -1,6 +1,8 @@
 /**
- * Created by pratikgarala on 14/5/17.
+ * Created by pratikgarala on 13/5/17.
  */
+
+//Redux Store
 
 import {createStore, applyMiddleware} from 'redux';
 import rootReducer from '../reducers/root_reducer';

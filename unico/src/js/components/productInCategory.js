@@ -13,7 +13,7 @@ class ProductInCategory extends React.Component {
     }
 
     handleValueChange(id){
-        if (document.querySelector("#noOfCartons" + id).value < 0 ) {
+        if (document.querySelector("#noOfCartons" + id).value < 0 || document.querySelector("#noOfCartons" + id).value > 100) {
             document.querySelector("#noOfCartons" + id).value = 1;
         }
         document.querySelector("#subValue" + id).textContent = (parseFloat(document.querySelector("#noOfCartons" + id).value * this.props.productItem.unitCost * this.props.productItem.unitsInCartons).toFixed(2));

@@ -1,6 +1,8 @@
 /**
- * Created by pratikgarala on 10/4/17.
+ * Created by pratikgarala on 13/5/17.
  */
+
+// firebase configurations
 
 import firebase from 'firebase';
 

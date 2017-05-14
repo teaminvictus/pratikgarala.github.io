@@ -1,6 +1,8 @@
 /**
- * Created by pratikgarala on 23/1/17.
+ * Created by pratikgarala on 13/5/17.
  */
+
+//Entry Point of the application
 
 import 'babel-polyfill';
 import React from 'react';

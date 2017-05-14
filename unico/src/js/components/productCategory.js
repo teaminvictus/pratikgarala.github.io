@@ -14,29 +14,30 @@ const ProductCategory = (props) => (
             {props.productCategory[0].category} ({props.productCategory.length})
         </div>
         <div className="col-lg-12 productTable">
+            <table id={"table" + props.index}>
+                <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Unit Cost</th>
+                    <th>Pack Size <br /> <span className="subText">No of Units</span></th>
+                    <th>Units in carton</th>
+                    <th>No. of Cartons</th>
+                    <th>value</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
                 {props.productCategory.map((item, index) => {
                     return (
-                        <table id={"table" + props.index}>
-                            <thead>
-                            <tr>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Unit Cost</th>
-                                <th>Pack Size <br /> <span className="subText">No of Units</span></th>
-                                <th>Units in carton</th>
-                                <th>No. of Cartons</th>
-                                <th>value</th>
-                                <th>Actions</th>
-                            </tr>
-                            </thead>
-                            <ProductInCategoryContainer key={index} productItem={item} itemIndex={index} categoryIndex={props.index}/>
-                        </table>
+                        <ProductInCategoryContainer key={index} productItem={item} itemIndex={index} categoryIndex={props.index}/>
                     );
                 })}
+            </table>
         </div>
     </div>
     ): null}
     </div>
+
 );
 
 export default ProductCategory;

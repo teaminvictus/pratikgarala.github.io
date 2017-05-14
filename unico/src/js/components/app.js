@@ -1,5 +1,5 @@
 /**
- * Created by pratikgarala on 23/1/17.
+ * Created by pratikgarala on 13/5/17.
  */
 
 import React from 'react';
@@ -8,9 +8,7 @@ import HeaderContainer from '../containers/headerContainer'
 import ViewIcons from './viewIcons';
 import ProductSectionContainer from '../containers/productSectionContainer';
 import ListViewContainer from '../containers/listViewContainer';
-import Footer from './footer';
 
-require("jquery");
 require("bootstrap-webpack");
 require("../../sass/main.sass");
 
@@ -22,7 +20,6 @@ const App = () => (
         <ViewIcons/>
         <ProductSectionContainer/>
         <ListViewContainer/>
-        {/*<Footer/>*/}
     </div>
 );
 
